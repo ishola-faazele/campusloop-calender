@@ -19,3 +19,14 @@ export class BadRequestError extends ApiError {
     super(StatusCodes.BAD_REQUEST, message);
   }
 }
+
+export class CalenderItemAlreadyAdd extends ApiError {
+  constructor(message: string = 'CalenderItem is already Added') {
+    super(StatusCodes.CONFLICT, message);
+  }
+}
+export class ValidationError extends BadRequestError {
+  constructor(message: string = 'Invalid Calender Input Format') {
+    super(message);
+  }
+}
